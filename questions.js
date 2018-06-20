@@ -73,3 +73,44 @@ const products = arr => {
   return newArr;
 }
 console.log(products([1, 3, 9, 4]))
+// O(n^2)
+// Loops over array and for each element in the array itll loop over the array again and multiply each element in the array together so long as the element in the second loop doesnt equal the
+// current element in the first loop.
+
+// 2D ARRAY
+// input: [
+//   [1,0,1,1,0],
+//   [0,1,1,1,0],
+//   [1,1,1,1,1],
+//   [1,0,1,1,1],
+//   [1,1,1,1,1]
+// ]
+const twoDArray = arr => {
+  let result = arr.map(a => a.slice());
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      if (arr[i][j] === 0) {
+        for (let k = 0; k < arr[i].length; k++) {
+          result[i][k] = 0;
+        }
+
+        for (let g = 0; g < arr.length; g++) {
+          result[g][j] = 0;
+        }
+      }
+    }
+  }
+  return result;
+};
+console.log(twoDArray([
+  [1,0,1,1,0],
+  [0,1,1,1,0],
+  [1,1,1,1,1],
+  [1,0,1,1,1],
+  [1,1,1,1,1]
+]))
+
+// STRING ROTATION
+const rotated = (str1, str2) => {
+  
+}
