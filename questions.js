@@ -112,5 +112,19 @@ console.log(twoDArray([
 
 // STRING ROTATION
 const rotated = (str1, str2) => {
-  
+  if (str1.length !== str2.length) {
+    return false;
+  }
+  let rotatedString = '';
+  for (let i = 0; i < str1.length; i++) {
+    if (str1 === str2 || str1 === rotatedString) {
+      return true;
+    } else {
+      rotatedString = str2.slice(i) + str2.slice(0, i)
+    }
+  }
+  return false;
 }
+console.log(rotated('amazon', 'azonam'));
+// O(n)
+// The longer the string, the more operations needed
