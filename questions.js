@@ -4,6 +4,20 @@ console.log(URLify('this is a test string'));
 //O(n)
 // The longer the string inputted the more operations are needed
 
+// URLify without regex
+const URLify2 = string => {
+  let newString = '';
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === ' ') {
+      newString += ('%20');
+    } else {
+      newString += string[i];
+    }
+  }
+  return newString;
+}
+console.log(URLify2('this is a test string'));
+
 // FILTERING AN ARRAY
 const filterArray = arr => {
   let filtered = [];
